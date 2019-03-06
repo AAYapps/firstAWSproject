@@ -1,0 +1,109 @@
+<div class="modal fade" id="CreateModal" tabindex="-1" role="dialog" aria-labelledby="reimbTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reimbTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-form-label"><h5>Amount: </h5></label>
+                    <input type="number" id="amount" min="1"></label>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label"><h5>Description: </h5></label>
+                    <br>
+                    <textarea id="desc" class="col-8"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label"><h5>Request Type: </h5></label>
+                    <button id="btnType" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">LODGING</button>
+                    <div class="dropdown-menu">
+                        <button id="btnLODGING" class="dropdown-item btn btn-primary">LODGING</button>
+                        <button id="btnTRAVEL" class="dropdown-item btn btn-primary">TRAVEL</button>
+                        <button id="btnFOOD" class="dropdown-item btn btn-primary">FOOD</button>
+                        <button id="btnOTHER" class="dropdown-item btn btn-primary">OTHER</button>
+                    </div>
+                    <script>
+                        function btnTypeChange(change){
+                            $('#btnType').html(change);
+                        }
+                        $('#btnLODGING').on('click', function () {btnTypeChange("LODGING")});
+                        $('#btnTRAVEL').on('click', function () {btnTypeChange("TRAVEL")});
+                        $('#btnFOOD').on('click', function () {btnTypeChange("FOOD")});
+                        $('#btnOTHER').on('click', function () {btnTypeChange("OTHER")});
+                    </script>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="reimbSubmit" type="button" class="btn btn-success" data-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    <h2 id="greet">Welcome </h2>
+    <br>
+    <h3>All reimbursement requests</h3>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    <div class="d-inline-flex p-2 bd-highlight">
+                        <h3>Page <span id="pageNum"></span> of <span id="pageLength"></span></h3>
+                    </div>
+                </th>
+                <th>
+                    <div class="d-inline-flex p-2 bd-highlight">
+                        <h3>Filter:</h3>
+                    </div>    
+                    <div class="d-inline-flex dropright">
+                        <button id="filter" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            All
+                        </button>
+                        <div class="dropdown-menu">
+                            <button id="btnAll" class="dropdown-item btn btn-primary">All</button>
+                            <button id="btnPending" class="dropdown-item btn btn-success">Pending</button>
+                            <button id="btnResolved" class="dropdown-item btn btn-danger">Resolved</button>
+                        </div>
+                    </div>
+                </th>
+                <th></th>
+                <th>
+                    <div class="d-inline-flex p-2 bd-highlight">
+                        <h3>New Reimbursement:</h3>
+                    </div>
+                    <div class="d-inline-flex dropright">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#CreateModal">
+                            <span class="fa fa-file"></span>
+                            Create
+                        </button>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th scope="col" hidden>#</th>
+                <th scope="col">Amount</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Last</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Type</th>
+                <th scope="col">Submitted</th>
+                <th scope="col">Resolved</th>
+            </tr>
+        </thead>
+        <tbody id="data">
+            
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation example">
+        <ul id="pages" class="pagination">
+
+        </ul>
+    </nav>
+</div>

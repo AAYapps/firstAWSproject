@@ -1,0 +1,90 @@
+<div class="modal fade" id="pendingModal" tabindex="-1" role="dialog" aria-labelledby="reimbTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reimbTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-form-label"><h5>Email: </h5></label>
+                    <label class="col-form-label" id="reimbemail"></label>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label"><h5>Amount: </h5></label>
+                    <label id="amount" class="col-form-label"></label>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label"><h5>Description: </h5></label>
+                    <label id="desc" class="col-form-label"></label>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label"><h5>Date Submitted: </h5></label>
+                    <label id="submitted" class="col-form-label"></label>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label"><h5>Request Type: </h5></label>
+                    <label id="type" class="col-form-label"></label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="reimbApprove" type="button" class="btn btn-success" data-dismiss="modal">Approve</button>
+                <button id="reimbDeny" type="button" class="btn btn-danger" data-dismiss="modal">Deny</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    <h2 id="greet">Welcome </h2>
+    <br>
+    <h3>All reimbursement requests (Click pending to review item)</h3>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    <div class="d-inline-flex p-2 bd-highlight">
+                        <h3>Page <span id="pageNum"></span> of <span id="pageLength"></span></h3>
+                    </div>
+                </th>
+                <th>
+                    <div class="d-inline-flex p-2 bd-highlight">
+                        <h3>Filter:</h3>
+                    </div>    
+                    <div class="d-inline-flex dropright">
+                        <button id="filter" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            All
+                        </button>
+                        <div class="dropdown-menu">
+                            <button id="btnAll" class="dropdown-item btn btn-primary">All</button>
+                            <button id="btnPending" class="dropdown-item btn btn-success">Pending</button>
+                            <button id="btnResolved" class="dropdown-item btn btn-danger">Resolved</button>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th scope="col" hidden>#</th>
+                <th scope="col">Amount</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Last</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Type</th>
+                <th scope="col">Submitted</th>
+                <th scope="col">Resolved</th>
+            </tr>
+        </thead>
+        <tbody id="data">
+            
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation example">
+        <ul id="pages" class="pagination">
+
+        </ul>
+    </nav>
+</div>
