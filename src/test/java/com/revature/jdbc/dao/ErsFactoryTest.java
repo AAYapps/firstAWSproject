@@ -106,18 +106,18 @@ public class ErsFactoryTest {
 //		ErsFactory.CreateReimbursement(ers);
 //	}
 	
-	@Test
-	public void testLogin() {
-		ErsFactory dao = new ErsFactory();
-		try {
-			assertTrue(dao.Login("mthompson", "password") != null);
-			assertFalse(dao.Login("mthompson", "passwor") != null);
-			assertFalse(dao.Login("mthompso", "password") != null);
-			assertFalse(dao.Login("mthompso", "passwor") != null);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	@Test
+//	public void testLogin() {
+//		ErsFactory dao = new ErsFactory();
+//		try {
+//			assertTrue(dao.Login("mthompson", "password") != null);
+//			assertFalse(dao.Login("mthompson", "passwor") != null);
+//			assertFalse(dao.Login("mthompso", "password") != null);
+//			assertFalse(dao.Login("mthompso", "passwor") != null);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 //	@Test
 //	void testCreateUser() {
