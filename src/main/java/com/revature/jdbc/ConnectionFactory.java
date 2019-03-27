@@ -1,7 +1,9 @@
 package com.revature.jdbc;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -37,8 +39,8 @@ public class ConnectionFactory {
 		Connection conn = null;
 		Properties prop = new Properties();
 		try {
-			InputStream is = ConnectionFactory.class.getResourceAsStream("/db.properties");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+			//InputStream is = ConnectionFactory.class.getResourceAsStream("/db.properties");
+			BufferedReader reader = new BufferedReader(new FileReader(new File("/home/ec2-user/db.properties")));
 			prop.load(reader);
 			Class.forName(prop.getProperty("driver"));
 			conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"), prop.getProperty("pwd"));
