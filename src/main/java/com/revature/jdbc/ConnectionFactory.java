@@ -41,6 +41,9 @@ public class ConnectionFactory {
 		try {
 			//InputStream is = ConnectionFactory.class.getResourceAsStream("/db.properties");
 			BufferedReader reader = new BufferedReader(new FileReader(new File("/home/ec2-user/db.properties")));
+			logger.info(reader.readLine());
+			logger.info(reader.readLine());
+			logger.info(reader.readLine());
 			prop.load(reader);
 			Class.forName(prop.getProperty("driver"));
 			conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("uname"), prop.getProperty("pwd"));
