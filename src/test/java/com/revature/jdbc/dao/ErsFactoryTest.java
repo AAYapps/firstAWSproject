@@ -12,7 +12,7 @@ import com.revature.jdbc.pojos.Ers;
 import com.revature.jdbc.pojos.ErsReimbursement;
 import com.revature.jdbc.pojos.ErsUser;
 
-class ErsFactoryTest {
+public class ErsFactoryTest {
 
 	ErsUser user = new ErsUser("mthompson", "Manuel", "Thompson", "manuel.thompson@gmail.com");
 	
@@ -22,8 +22,12 @@ class ErsFactoryTest {
 //		System.out.println(ErsFactory.hashString(c.nextLine()));
 //	}
 	
+	public ErsFactoryTest() {
+		
+	}
+	
 	@Test
-	void testFindAllReimbursements() {
+	public void testFindAllReimbursements() {
 		Ers ers = new Ers(user);
 		ErsFactory dao = new ErsFactory();
 		dao.findUserReimbursements(ers, 1);
@@ -103,7 +107,7 @@ class ErsFactoryTest {
 //	}
 	
 	@Test
-	void testLogin() {
+	public void testLogin() {
 		ErsFactory dao = new ErsFactory();
 		try {
 			assertTrue(dao.Login("mthompson", "password") != null);
