@@ -44,6 +44,8 @@ public class ConnectionFactory {
 			prop.load(reader);
 			logger.info(prop.getProperty("driver"));
 			logger.info(prop.getProperty("url"));
+			logger.info(prop.getProperty("uname"));
+			logger.info(prop.getProperty("pass"));
 			Class.forName(prop.getProperty("driver"));
 			conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("uname"), prop.getProperty("pass"));
 		} catch (FileNotFoundException e) {
