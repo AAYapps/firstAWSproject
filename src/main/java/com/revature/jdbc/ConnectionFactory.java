@@ -43,7 +43,7 @@ public class ConnectionFactory {
 			BufferedReader reader = new BufferedReader(new FileReader(new File("/home/ec2-user/db.properties")));
 			prop.load(reader);
 			Class.forName(prop.getProperty("driver"));
-			conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"), prop.getProperty("pwd"));
+			conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("uname"), prop.getProperty("pwd"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
