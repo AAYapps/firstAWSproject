@@ -1,7 +1,7 @@
 package com.revature.jdbc.dao;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.text.DateFormat;
 //import java.util.Scanner;
