@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.text.DateFormat;
 //import java.util.Scanner;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.revature.jdbc.pojos.Ers;
 import com.revature.jdbc.pojos.ErsReimbursement;
