@@ -41,11 +41,16 @@ public class ConnectionFactory {
 		try {
 			//InputStream is = ConnectionFactory.class.getResourceAsStream("/db.properties");
 			BufferedReader reader = new BufferedReader(new FileReader(new File("/home/ec2-user/db.properties")));
-			logger.info(reader.readLine());
-			logger.info(reader.readLine());
+			String driver = reader.readLine();
+			String url = reader.readLine();
+			String uname = reader.readLine();
+			String pass = reader.readLine();
+			
+			logger.info(driver);
+			logger.info(url);
 			prop.load(reader);
-			Class.forName(prop.getProperty("driver"));
-			conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("uname"), prop.getProperty("pass"));
+			Class.forName(prop.getProperty(driver));
+			conn = DriverManager.getConnection(prop.getProperty(url), prop.getProperty(uname), prop.getProperty(pass));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
